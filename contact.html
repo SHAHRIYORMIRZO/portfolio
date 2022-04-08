@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/contact.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+    <script src="https://kit.fontawesome.com/574503b95f.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="theme-btn">
+        <a href="home.html">
+            <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+        </a>
+    </div>
+    <section id="contact">
+        <div class="contact-info">
+            <h1 class="contact-title">get in <span>touch</span></h1>
+            <h2>don't be shy</h2>
+            <p>
+                Feel free to get in touch with me. I am always open to
+                discussing new projects, creative ideas or opportunities
+                to be part of your visions.
+            </p>
+            <ul class="contact-list">
+                <li class="contact-item">
+                    <span><i class="fa-solid fa-location-dot"></i></span><span>addres point</span>
+                    <p> Uzbekistan Tashkent,
+                        Fergana valley, Rishtan town
+                    </p>
+                </li>
+                <li class="contact-item">
+                    <span><i class="fa-solid fa-envelope"></i></span><span>email</span>
+                    <p>sakbaraliyev8@gmail.com</p>
+                </li>
+                <li class="contact-item">
+                    <span><i class="fa-solid fa-phone"></i></span><span>phone number</span>
+                    <p>+998334447780</p>
+                </li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <ul class="social-list">
+                <li class="social-item"><a href="http:\\www.linkedin.com/in/akbaraliyev-shohriyormizo-7693b4225/"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li class="social-item"><a href="http:\\t.me\Shohriyor_Akbaraliyev"><i class="fa-brands fa-telegram"></i></a></li>
+                <li class="social-item"><a href="http:\\www.instagram.com/shohriyormirzo/"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+        </div>
+        <form action="" class="contact-form" onsubmit="sendEmail"; reset(); return false>
+            <input type="text" name="name" id="name" placeholder="your name">
+            <input type="text" name="email" id="email" placeholder="your email">
+            <input type="number" name="phone" id="phone" placeholder="phone number">
+            <textarea name="message" id="message" placeholder="your message"></textarea>
+            <button class="send-message">send message<span></span><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+    </section>
+    <nav class="left">
+        <ul class="left-items">
+            <li class=" active left-item"><a href="/home.html"><i class="fa-solid fa-house-chimney"></i></a><span>home</span></li>
+            <li class="left-item"><a href="/about.html"><i class="fa-solid fa-user-large"></i></a><span>about</span></li>
+            <li class="left-item"><a href="/portfolio.html"><i class="fa-solid fa-briefcase"></i></a><span>portfolio</span></li>
+            <li class="left-item"><a href="/contact.html"><i class="fa-solid fa-envelope"></i></a><span>contact</span></li>
+            <li class="left-item"><a href="/blog.html"><i class="fa-regular fa-comments"></i></a><span>blog</span></li>
+        </ul>
+    </nav>
+    <footer>
+        <nav class="navigation">
+            <ul class="navigation-items">
+                <li class=" active navigation-item"><a href="/home.html"><i class="fa-solid fa-house-chimney"></i></a></li>
+                <li class="navigation-item"><a href="/about.html"><i class="fa-solid fa-user-large"></i></a></li>
+                <li class="navigation-item"><a href="/portfolio.html"><i class="fa-solid fa-briefcase"></i></a></li>
+                <li class="navigation-item"><a href="/contact.html"><i class="fa-solid fa-envelope"></i></a></li>
+                <li class="navigation-item"><a href="/blog.html"><i class="fa-regular fa-comments"></i></a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "sakbaraliyev8@gmai.com",
+            Password : "Mirzo7780",
+            To : 'sakbaraliyev8@gmai.com',
+            From : document.getElementById('email'),
+            Subject : "New contact Form Enquiry",
+            Body : "Name: " + document.getElementById('name').value
+            + "<br> Email: " + document.getElementById("email").value
+            + "<br> Phone number: " + document.getElementById('phone').value
+            + "<br> Message: " + document.getElementById("message").value
+        }).then(
+            message => alert("message successfully")
+        );
+    }
+    </script>
+</body>
+</html>
